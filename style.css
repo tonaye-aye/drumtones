@@ -61,31 +61,31 @@ body {
   cursor: pointer;
 }
 .key:nth-child(1) {
-  background: #33211b;
+  background: #1a1a1a;
 }
 .key:nth-child(2) {
-  background: #3b231b;
+  background: #2e1e19;
 }
 .key:nth-child(3) {
-  background: #4c271b;
+  background: #3b231b;
 }
 .key:nth-child(4) {
-  background: #5c2b1b;
+  background: #4c271b;
 }
 .key:nth-child(5) {
   background: #6d301c;
 }
 .key:nth-child(6) {
-  background: #7d341c;
-}
-.key:nth-child(7) {
   background: #8e381c;
 }
-.key:nth-child(8) {
+.key:nth-child(7) {
   background: #9e3c1c;
 }
+.key:nth-child(8) {
+  background: #aa5236;
+}
 .key:nth-child(9) {
-  background: #a14122;
+  background: #b26248;
 }
 
 .key.playing {
