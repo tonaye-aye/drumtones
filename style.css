@@ -8,7 +8,10 @@
 
 body {
   color: snow;
-  background: #1a1a1a;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23170904' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%232d1108' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23441a0c' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%235a2210' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23712b14' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23873318' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%239e3c1c' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
   font-size: 12px;
   font-family: 'Exo 2', sans-serif;
 }
@@ -44,24 +47,61 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: black;
   text-align: center;
-  border: 2px solid rgba(255, 231, 122, 0.25);
+  border: 2px solid darkgray;
   border-radius: 1rem;
-  box-shadow: 0px 2px 5px 0.5px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 4px 3px 0px rgba(0, 0, 0, 0.75);
   transition: 0.1s all ease-in;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  cursor: pointer;
+}
+.key:nth-child(1) {
+  background: #33211b;
+}
+.key:nth-child(2) {
+  background: #3b231b;
+}
+.key:nth-child(3) {
+  background: #4c271b;
+}
+.key:nth-child(4) {
+  background: #5c2b1b;
+}
+.key:nth-child(5) {
+  background: #6d301c;
+}
+.key:nth-child(6) {
+  background: #7d341c;
+}
+.key:nth-child(7) {
+  background: #8e381c;
+}
+.key:nth-child(8) {
+  background: #9e3c1c;
+}
+.key:nth-child(9) {
+  background: #a14122;
+}
+
+.key.playing {
+  background: snow;
 }
 
 .title {
   font-size: min(4rem, 6vw);
-  color: whitesmoke;
+  color: white;
   padding: 0 0 0.75rem 0;
 }
 
 .description {
   font-size: min(2rem, 3vw);
-  color: linen;
-  opacity: 0.25;
+  color: seashell;
+  opacity: 1;
 }
 .description::first-letter {
   text-transform: uppercase;

@@ -1,38 +1,65 @@
-const keys = Array.from(document.querySelectorAll(".key"));
-const help = document.querySelector(".help");
-const helpModal = document.querySelector(".help-modal");
+const keys = Array.from(document.querySelectorAll('.key'));
 
 const removeTransition = (e) => {
-  if (e.propertyName !== "transform") return;
-  e.target.classList.remove("playing");
+  if (e.propertyName !== 'transform') return;
+  e.target.classList.remove('playing');
 };
 
-const playSound = (e) => {
+const playSoundKeyboard = (e) => {
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
   if (!audio) return;
 
-  key.classList.add("playing");
+  key.classList.add('playing');
   audio.currentTime = 0;
   audio.play();
 };
 
-const helpSlider = () => {
-  if (helpModal.classList.contains("slide-reverse")) {
-    helpModal.classList.remove("slide-reverse");
-    helpModal.classList.add("slide");
-  } else {
-    helpModal.classList.remove("slide");
-    helpModal.classList.add("slide-reverse");
+const findKeyCode = (keyCode) => {
+  console.log(keyCode);
+  const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+  const key = document.querySelector(`div[data-key="${keyCode}"]`);
+  if (!audio) return;
+
+  key.classList.add('playing');
+  audio.currentTime = 0;
+  audio.play();
+};
+
+const playSoundClick = (e) => {
+  if (e.srcElement.id === 'clap') {
+    findKeyCode(81);
+  } else if (e.srcElement.id === 'openhat') {
+    findKeyCode(87);
+  } else if (e.srcElement.id === 'hihat') {
+    findKeyCode(69);
+  } else if (e.srcElement.id === 'kick') {
+    findKeyCode(82);
+  } else if (e.srcElement.id === 'snare') {
+    findKeyCode(84);
+  } else if (e.srcElement.id === 'ride') {
+    findKeyCode(89);
+  } else if (e.srcElement.id === 'tom') {
+    findKeyCode(74);
+  } else if (e.srcElement.id === 'tink') {
+    findKeyCode(75);
+  } else if (e.srcElement.id === 'boom') {
+    findKeyCode(76);
   }
 };
 
 const app = () => {
-  keys.forEach((key) =>
-    key.addEventListener("transitionend", removeTransition)
-  );
-  window.addEventListener("keydown", playSound);
-  help.addEventListener("click", helpSlider);
+  window.addEventListener('keydown', playSoundKeyboard);
+
+  keys.forEach((key) => {
+    key.addEventListener('transitionend', removeTransition);
+    key.addEventListener('click', playSoundClick);
+  });
+
+  // keys.forEach((key) =>
+  //   key.addEventListener('transitionend', removeTransition)
+  // );
+  // keys.forEach((key) => key.addEventListener('click', playSoundClick));
 };
 
 app();
