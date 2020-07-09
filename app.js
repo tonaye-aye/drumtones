@@ -54,12 +54,8 @@ const app = () => {
   keys.forEach((key) => {
     key.addEventListener('transitionend', removeTransition);
     key.addEventListener('click', playSoundClick);
+    key.addEventListener('touch', playSoundClick);
   });
-
-  // keys.forEach((key) =>
-  //   key.addEventListener('transitionend', removeTransition)
-  // );
-  // keys.forEach((key) => key.addEventListener('click', playSoundClick));
 };
 
 app();
