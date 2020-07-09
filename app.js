@@ -50,10 +50,9 @@ const playSoundClick = (e) => {
 
 const app = () => {
   window.addEventListener('keydown', playSoundKeyboard);
-
   keys.forEach((key) => {
     key.addEventListener('transitionend', removeTransition);
-    key.addEventListener('click', playSoundClick);
+    key.addEventListener('mousedown', playSoundClick);
     key.addEventListener('touchstart', playSoundClick);
   });
 };
