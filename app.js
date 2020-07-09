@@ -52,8 +52,8 @@ const app = () => {
   window.addEventListener('keydown', playSoundKeyboard);
   keys.forEach((key) => {
     key.addEventListener('transitionend', removeTransition);
-    key.addEventListener('mousedown', playSoundClick);
-    key.addEventListener('touchstart', playSoundClick);
+    key.addEventListener('mouseup', playSoundClick);
+    key.addEventListener('touchend', playSoundClick);
   });
 };
 
